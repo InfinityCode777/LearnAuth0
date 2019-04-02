@@ -1,0 +1,21 @@
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "5cV-tU-g0R"; */
+"5cV-tU-g0R.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Sign In"; ObjectID = "O1f-XQ-Gou"; */
+"O1f-XQ-Gou.normalTitle" = "Sign In";
+
+/* Class = "UIButton"; normalTitle = "Signup Here"; ObjectID = "qOq-UT-M69"; */
+"qOq-UT-M69.normalTitle" = "Signup Here";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "srI-C0-0eI"; */
+"srI-C0-0eI.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Continue Offline"; ObjectID = "tmh-qr-AGF"; */
+"tmh-qr-AGF.normalTitle" = "Continue Offline";
+
+/* Class = "UIButton"; normalTitle = "Forgot password？"; ObjectID = "wtL-OX-1t1"; */
+"wtL-OX-1t1.normalTitle" = "Forgot password？";
+
+/* Class = "UILabel"; text = "Don't have an account? "; ObjectID = "xzj-Yl-6Fr"; */
+"xzj-Yl-6Fr.text" = "Don't have an account? ";

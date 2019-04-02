@@ -7,6 +7,8 @@ target 'LearnAuth0Simple' do
 
   # Pods for LearnAuth0Simple
   pod 'Auth0'
+  pod 'Anchorage'
+  pod 'Alamofire'
 
   target 'LearnAuth0SimpleTests' do
     inherit! :search_paths

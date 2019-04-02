@@ -1,0 +1,89 @@
+/*
+ Localizable.strings
+ loggerApp
+ 
+ Created by Jing Wang on 1/22/19.
+ Copyright © 2019 figur8. All rights reserved.
+ */
+
+// f8 登录页面
+"signIn" = "登录";
+"signOut" = "退出";
+"continueText" = "继续";
+"continueOffline" = "继续离线模式";
+"whenOffline" = "当离线时";
+"offlineNoNetwork" = "无网络，离线模式";
+"offlineWarning" = "部分功能受限，数据不会被上传到云端";
+"orText" = "或";
+"noAccountText" = "没有账户?";
+"signupText" = "点击注册";
+"forgotPasswordText" = "忘记密码?";
+"loginFailedText" = "登录失败!";
+"noNetworkWarning" = "无网络! 部分功能受限，数据不会被上传到云端";
+"loginErrorText" = "登录错误：";
+
+// f8 信息页面
+"otherActivity" = "其它活动";
+"otherTrainee"= "其他受训者";
+"doneText" = "完成";
+"continueNext" = "继续";
+"addTraineeText" = "添加受训者";
+
+// f8 连接页面
+"gyroCalibMsgTitle" = "校准设备中";
+"gyroCalibMsgBody" = "请适度旋转设备";
+"ignoreText" = "忽略";
+"retryText" = "重试";
+"optimizingText" = "优化设备中";
+"errOptimizingMsg" = "错误，设备优化失败\n请重试或跳过";
+"aMomentMsg" = "请稍等";
+"bleResetingMsg" = "重启蓝牙...";
+"skipText" = "跳过";
+
+// f8 分配页面
+// 先前示例已包含该条目下所有内容
+
+
+// f8 记录页面
+"testNamePlaceholder" = "P###_SXXXXX_AXXXXX_T#";
+"notesNamePlaceholder" = "添加笔记 ...";
+"noDeviceConnected" = "无连接设备！";
+"trialsText" = "试验";
+"startCollectingData" = "收集数据起始时间: %@)";
+"magDeclinationNote" = "磁偏角: %@";
+"plotLengendNotApply" = "无效";
+"plotLengendNotAssign" = "未分配";
+"alertSavedError" = " 保存错误!";
+"alertOK" = "好";
+"alertSavedOk" = "已保存!";
+"alertPhotoSavedToAlbum" = "屏幕截图已保存至相册.";
+"alertSave" = "保存";
+"alertInputMagIncl" = "请输入磁偏角 (空白=0.0)";
+"alertInputHeading"  = "请输入朝向 (空白=0.0)";
+"alertCollectAngle" = "在%@方向收集10秒钟欧拉角信息...";
+"figur8" = "figur8";
+"alertDelete" = "删除";
+"inputNameAlertTitle" = "请输入试验名称及备注（可选）";
+
+
+// f8 数据管理器页面
+"trialsText" = "试验";
+"selectText" = "选择";
+"selectTrialsText"= "选择试验";
+"cancelText" = "取消";
+"confirmDeletionMsg" = "确认要删除%d条试验记录吗？";
+"deleteText" = "删除";
+"deleteTrialsText" = "删除试验";
+"activityCenterAlertMsg" = " 该导出方式仅支持单一文件上传.\n请选择单个文件导出或选择其它t导出方式";
+"noticeText" = "注意";
+
+
+// F8Device or similar
+// Need to test this one
+"photoAudioNotAuthorized"  = "照片，视频或者音频因未被授权使用!\n\n在设置>%@处解决该问题";
+"deviceDisconnected" = "传感器连接中断";
+
+// 工具类
+"okText" = "好";
+"errorText" = "错误";
+"confirmText" = "确认";

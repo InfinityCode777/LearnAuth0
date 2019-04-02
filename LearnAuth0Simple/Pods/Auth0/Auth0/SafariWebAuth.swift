@@ -181,6 +181,7 @@ class SafariWebAuth: WebAuth {
 
         entries.forEach { items.append(URLQueryItem(name: $0, value: $1)) }
         components.queryItems = self.telemetry.queryItemsWithTelemetry(queryItems: items)
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
         return components.url!
     }
 
@@ -233,11 +234,12 @@ class SafariWebAuth: WebAuth {
 
 private func generateDefaultState() -> String? {
     var data = Data(count: 32)
+    var tempData = data
 
-    let result = data.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) -> Int in
+    let result = tempData.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) -> Int in
         return Int(SecRandomCopyBytes(kSecRandomDefault, data.count, bytes))
     }
 
     guard result == 0 else { return nil }
-    return data.a0_encodeBase64URLSafe()
+    return tempData.a0_encodeBase64URLSafe()
 }

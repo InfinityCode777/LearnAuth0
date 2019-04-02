@@ -1,20 +1,28 @@
 PODS:
-  - Auth0 (1.10.1):
+  - Alamofire (4.8.2)
+  - Anchorage (4.3)
+  - Auth0 (1.14.2):
     - SimpleKeychain
-  - SimpleKeychain (0.8.0)
+  - SimpleKeychain (0.8.1)
 
 DEPENDENCIES:
+  - Alamofire
+  - Anchorage
   - Auth0
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Anchorage
     - Auth0
     - SimpleKeychain
 
 SPEC CHECKSUMS:
-  Auth0: 9d36ee6f452b7bd0af3907cb6c674425599e6f0e
-  SimpleKeychain: 84c748463eec601dfee5e7990f55cc82edc5488d
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Anchorage: 21a98675245188427f0bcea21404d42a824a766f
+  Auth0: df9ac013e7850052fea1dcd53fa09bb129121721
+  SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
 
-PODFILE CHECKSUM: cc5b3e949c8c42ed78dc9a8c12657c6fe5fa4c0b
+PODFILE CHECKSUM: eb4440c9dc2a89b1b7ebf9d953e0d625691414f7
 
 COCOAPODS: 1.5.0

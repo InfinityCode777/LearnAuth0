@@ -9,11 +9,27 @@
 /* Begin PBXBuildFile section */
 		2D365BA520B46731002B8382 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D365BA420B46731002B8382 /* Auth0.plist */; };
 		2D4B10E620B3684D0094963F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B10E520B3684D0094963F /* AppDelegate.swift */; };
-		2D4B10E820B3684D0094963F /* F8Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B10E720B3684D0094963F /* F8Login.swift */; };
+		2D4B10E820B3684D0094963F /* F8LoginNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B10E720B3684D0094963F /* F8LoginNativeVC.swift */; };
 		2D4B10EB20B3684D0094963F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4B10E920B3684D0094963F /* Main.storyboard */; };
 		2D4B10ED20B3684F0094963F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4B10EC20B3684F0094963F /* Assets.xcassets */; };
 		2D4B10F020B3684F0094963F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4B10EE20B3684F0094963F /* LaunchScreen.storyboard */; };
 		2D4B10FB20B3684F0094963F /* LearnAuth0SimpleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B10FA20B3684F0094963F /* LearnAuth0SimpleTests.swift */; };
+		2D4B44F922540BF90045772C /* F8Auth0Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B44F822540BF90045772C /* F8Auth0Manager.swift */; };
+		2D4B44FB22540C1C0045772C /* F8Auth0ManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B44FA22540C1C0045772C /* F8Auth0ManagerProtocol.swift */; };
+		2D4B44FD22540C990045772C /* ExtLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B44FC22540C990045772C /* ExtLocalizable.swift */; };
+		2D4B450022540CC90045772C /* F8LocaleStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B44FF22540CC90045772C /* F8LocaleStrings.swift */; };
+		2D4B450422540D130045772C /* UILocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B450122540D130045772C /* UILocalizedLabel.swift */; };
+		2D4B450522540D130045772C /* UILocalizedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B450222540D130045772C /* UILocalizedButton.swift */; };
+		2D4B450622540D130045772C /* UILocalizedBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B450322540D130045772C /* UILocalizedBarButton.swift */; };
+		2D4B450922540D6D0045772C /* F8Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B450822540D6D0045772C /* F8Log.swift */; };
+		2D4B450B22540D8A0045772C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B450A22540D8A0045772C /* Utils.swift */; };
+		2D4B451022540DD40045772C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D4B451222540DD40045772C /* Localizable.strings */; };
+		2D4B451522540ED30045772C /* F8ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B451422540ED30045772C /* F8ColorScheme.swift */; };
+		2D4B451722540F9A0045772C /* extUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B451622540F9A0045772C /* extUINavigationController.swift */; };
+		2D4B451A22540FDF0045772C /* F8SystemNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B451922540FDF0045772C /* F8SystemNotifier.swift */; };
+		2D4B451C225410310045772C /* extUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B451B225410310045772C /* extUIViewController.swift */; };
+		2D4B451E2254107A0045772C /* extUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B451D2254107A0045772C /* extUIButton.swift */; };
+		2D4B4520225411290045772C /* LicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B451F225411290045772C /* LicenseManager.swift */; };
 		83F6A69DFBB939A7AEA56353 /* Pods_LearnAuth0SimpleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF1AD908352685CF1BA2E62 /* Pods_LearnAuth0SimpleTests.framework */; };
 		B0E55F2611EB6287447F6D3F /* Pods_LearnAuth0Simple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BD8E7747AD5A74ADA7C666 /* Pods_LearnAuth0Simple.framework */; };
 /* End PBXBuildFile section */
@@ -32,7 +48,7 @@
 		2D365BA420B46731002B8382 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		2D4B10E220B3684D0094963F /* LearnAuth0Simple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnAuth0Simple.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4B10E520B3684D0094963F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2D4B10E720B3684D0094963F /* F8Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8Login.swift; sourceTree = "<group>"; };
+		2D4B10E720B3684D0094963F /* F8LoginNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8LoginNativeVC.swift; sourceTree = "<group>"; };
 		2D4B10EA20B3684D0094963F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D4B10EC20B3684F0094963F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D4B10EF20B3684F0094963F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +56,25 @@
 		2D4B10F620B3684F0094963F /* LearnAuth0SimpleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearnAuth0SimpleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4B10FA20B3684F0094963F /* LearnAuth0SimpleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnAuth0SimpleTests.swift; sourceTree = "<group>"; };
 		2D4B10FC20B3684F0094963F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D4B44F822540BF90045772C /* F8Auth0Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8Auth0Manager.swift; sourceTree = "<group>"; };
+		2D4B44FA22540C1C0045772C /* F8Auth0ManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8Auth0ManagerProtocol.swift; sourceTree = "<group>"; };
+		2D4B44FC22540C990045772C /* ExtLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtLocalizable.swift; sourceTree = "<group>"; };
+		2D4B44FF22540CC90045772C /* F8LocaleStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8LocaleStrings.swift; sourceTree = "<group>"; };
+		2D4B450122540D130045772C /* UILocalizedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalizedLabel.swift; sourceTree = "<group>"; };
+		2D4B450222540D130045772C /* UILocalizedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalizedButton.swift; sourceTree = "<group>"; };
+		2D4B450322540D130045772C /* UILocalizedBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILocalizedBarButton.swift; sourceTree = "<group>"; };
+		2D4B450822540D6D0045772C /* F8Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8Log.swift; sourceTree = "<group>"; };
+		2D4B450A22540D8A0045772C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2D4B450C22540DA30045772C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		2D4B450D22540DA30045772C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2D4B451122540DD40045772C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2D4B451322540DDA0045772C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2D4B451422540ED30045772C /* F8ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8ColorScheme.swift; sourceTree = "<group>"; };
+		2D4B451622540F9A0045772C /* extUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUINavigationController.swift; sourceTree = "<group>"; };
+		2D4B451922540FDF0045772C /* F8SystemNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8SystemNotifier.swift; sourceTree = "<group>"; };
+		2D4B451B225410310045772C /* extUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUIViewController.swift; sourceTree = "<group>"; };
+		2D4B451D2254107A0045772C /* extUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extUIButton.swift; sourceTree = "<group>"; };
+		2D4B451F225411290045772C /* LicenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseManager.swift; sourceTree = "<group>"; };
 		5C94577679691232A58BDB19 /* Pods-LearnAuth0SimpleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnAuth0SimpleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnAuth0SimpleTests/Pods-LearnAuth0SimpleTests.release.xcconfig"; sourceTree = "<group>"; };
 		97BD8E7747AD5A74ADA7C666 /* Pods_LearnAuth0Simple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnAuth0Simple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DF1AD908352685CF1BA2E62 /* Pods_LearnAuth0SimpleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnAuth0SimpleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,13 +126,18 @@
 		2D4B10E420B3684D0094963F /* LearnAuth0Simple */ = {
 			isa = PBXGroup;
 			children = (
+				2D4B451822540FD40045772C /* UIComponents */,
+				2D4B450722540D570045772C /* Utils */,
+				2D4B44FE22540CB20045772C /* Localization */,
 				2D4B10E520B3684D0094963F /* AppDelegate.swift */,
-				2D4B10E720B3684D0094963F /* F8Login.swift */,
+				2D4B10E720B3684D0094963F /* F8LoginNativeVC.swift */,
 				2D4B10E920B3684D0094963F /* Main.storyboard */,
 				2D4B10EC20B3684F0094963F /* Assets.xcassets */,
 				2D4B10EE20B3684F0094963F /* LaunchScreen.storyboard */,
 				2D4B10F120B3684F0094963F /* Info.plist */,
 				2D365BA420B46731002B8382 /* Auth0.plist */,
+				2D4B44F822540BF90045772C /* F8Auth0Manager.swift */,
+				2D4B44FA22540C1C0045772C /* F8Auth0ManagerProtocol.swift */,
 			);
 			path = LearnAuth0Simple;
 			sourceTree = "<group>";
@@ -109,6 +149,41 @@
 				2D4B10FC20B3684F0094963F /* Info.plist */,
 			);
 			path = LearnAuth0SimpleTests;
+			sourceTree = "<group>";
+		};
+		2D4B44FE22540CB20045772C /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				2D4B44FC22540C990045772C /* ExtLocalizable.swift */,
+				2D4B450322540D130045772C /* UILocalizedBarButton.swift */,
+				2D4B450222540D130045772C /* UILocalizedButton.swift */,
+				2D4B450122540D130045772C /* UILocalizedLabel.swift */,
+				2D4B44FF22540CC90045772C /* F8LocaleStrings.swift */,
+				2D4B451222540DD40045772C /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		2D4B450722540D570045772C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2D4B450822540D6D0045772C /* F8Log.swift */,
+				2D4B450A22540D8A0045772C /* Utils.swift */,
+				2D4B451422540ED30045772C /* F8ColorScheme.swift */,
+				2D4B451622540F9A0045772C /* extUINavigationController.swift */,
+				2D4B451B225410310045772C /* extUIViewController.swift */,
+				2D4B451F225411290045772C /* LicenseManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2D4B451822540FD40045772C /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				2D4B451922540FDF0045772C /* F8SystemNotifier.swift */,
+				2D4B451D2254107A0045772C /* extUIButton.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		9B33B88DBE71E011AC8C7AD7 /* Frameworks */ = {
@@ -198,6 +273,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 2D4B10D920B3684D0094963F;
 			productRefGroup = 2D4B10E320B3684D0094963F /* Products */;
@@ -215,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D4B451022540DD40045772C /* Localizable.strings in Resources */,
 				2D4B10F020B3684F0094963F /* LaunchScreen.storyboard in Resources */,
 				2D4B10ED20B3684F0094963F /* Assets.xcassets in Resources */,
 				2D4B10EB20B3684D0094963F /* Main.storyboard in Resources */,
@@ -257,11 +334,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LearnAuth0Simple/Pods-LearnAuth0Simple-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
 				"${BUILT_PRODUCTS_DIR}/Auth0/Auth0.framework",
 				"${BUILT_PRODUCTS_DIR}/SimpleKeychain/SimpleKeychain.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchorage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Auth0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimpleKeychain.framework",
 			);
@@ -295,8 +376,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D4B10E820B3684D0094963F /* F8Login.swift in Sources */,
+				2D4B451A22540FDF0045772C /* F8SystemNotifier.swift in Sources */,
+				2D4B451C225410310045772C /* extUIViewController.swift in Sources */,
+				2D4B451522540ED30045772C /* F8ColorScheme.swift in Sources */,
+				2D4B450622540D130045772C /* UILocalizedBarButton.swift in Sources */,
+				2D4B44FB22540C1C0045772C /* F8Auth0ManagerProtocol.swift in Sources */,
+				2D4B44F922540BF90045772C /* F8Auth0Manager.swift in Sources */,
+				2D4B450422540D130045772C /* UILocalizedLabel.swift in Sources */,
+				2D4B451E2254107A0045772C /* extUIButton.swift in Sources */,
+				2D4B450522540D130045772C /* UILocalizedButton.swift in Sources */,
+				2D4B450022540CC90045772C /* F8LocaleStrings.swift in Sources */,
+				2D4B4520225411290045772C /* LicenseManager.swift in Sources */,
+				2D4B450922540D6D0045772C /* F8Log.swift in Sources */,
+				2D4B450B22540D8A0045772C /* Utils.swift in Sources */,
+				2D4B10E820B3684D0094963F /* F8LoginNativeVC.swift in Sources */,
+				2D4B451722540F9A0045772C /* extUINavigationController.swift in Sources */,
 				2D4B10E620B3684D0094963F /* AppDelegate.swift in Sources */,
+				2D4B44FD22540C990045772C /* ExtLocalizable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +419,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D4B10EA20B3684D0094963F /* Base */,
+				2D4B450C22540DA30045772C /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -331,8 +428,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				2D4B10EF20B3684F0094963F /* Base */,
+				2D4B450D22540DA30045772C /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2D4B451222540DD40045772C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D4B451122540DD40045772C /* en */,
+				2D4B451322540DDA0045772C /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -342,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -402,6 +510,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

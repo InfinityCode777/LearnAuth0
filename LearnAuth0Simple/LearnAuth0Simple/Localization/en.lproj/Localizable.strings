@@ -1,0 +1,90 @@
+/*
+ Localizable.strings
+ loggerApp
+ 
+ Created by Jing Wang on 1/22/19.
+ Copyright © 2019 figur8. All rights reserved.
+ */
+
+// For f8 Login page
+"signIn" = "Sign In";
+"signOut" = "Sign Out";
+"continueText" = "Continue";
+"continueOffline" = "Continue Offline";
+"whenOffline" = "When Offline";
+"offlineNoNetwork" = "Offline, Network Unavailable";
+"offlineWarning" = "Functionality will be limited and data will not be uploaded to cloud";
+"orText" = "or";
+"noAccountText" = "Don't have an account?";
+"signupText" = "Signup Here";
+"forgotPasswordText" = "Forgot password?";
+"loginFailedText" = "Login failed!";
+"noNetworkWarning" = "No Network! Functionality will be limited and data will not be uploaded to cloud!";
+"loginErrorText" = "Login error: ";
+
+// For f8 Info page
+"otherActivity" = "Other Activity";
+"otherTrainee"= "Other Trainee";
+"doneText" = "Done";
+"continueNext" = "Continue";
+"addTraineeText" = "Add Trainee";
+
+// For f8 Pairing page
+"gyroCalibMsgTitle" = "Device Calibration In Progress";
+"gyroCalibMsgBody" = "Please rotate device gently";
+"ignoreText" = "Ignore";
+"retryText" = "Retry";
+"optimizingText" = "Optimizing device(s)";
+"errOptimizingMsg" = "Error, device optimization failed\nPlease retry or skip";
+"aMomentMsg" = "Just a moment";
+"bleResetingMsg" = "Bluetooth resetting...";
+"skipText" = "Skip";
+
+// For f8 Commission page
+// All are covered by previous cases
+
+
+// For f8 Recorder page
+"testNamePlaceholder" = "P###_SXXXXX_AXXXXX_T#";
+"notesNamePlaceholder" = "Add a note ...";
+"noDeviceConnected" = "No sensor connected!";
+"trialsText" = "Trials";
+"startCollectingData" = "Start collecting data at: %@)";
+"magDeclinationNote" = "Magnetic declination: %@";
+"plotLengendNotApply" = "N/A";
+"plotLengendNotAssign" = " NC ";
+"alertSavedError" = "Save error!";
+"alertOK" = "OK";
+"alertSavedOk" = "Saved!";
+"alertPhotoSavedToAlbum" = "Snapshot has been saved to photo album.";
+"alertSave" = "Save";
+"alertInputMagIncl" = "Please input mag declination (EMPTY=0.0)";
+"alertInputHeading"  = "Please input current heading (EMPTY=0.0)";
+"alertCollectAngle" = "Collecting Euler Angles for 10s at heading %@...";
+"figur8" = "figur8";
+"alertDelete" = "Delete";
+"inputNameAlertTitle" = "Please input trial name & notes(optional)";
+
+// For F8FileList page
+"trialsText" = "Trials";
+"selectText" = "Select";
+"selectTrialsText"= "Select trials";
+"cancelText" = "Cancel";
+"confirmDeletionMsg" = "Are you sure you want to permanently delete %d trial(s)?";
+"deleteText" = "Delete";
+"deleteTrialsText" = "Delete trials";
+"activityCenterAlertMsg" = " This method only supports single file uploads.\nPlease export individual files or try a different method.";
+"noticeText" = "Notice";
+
+
+
+// F8Device or similar
+// Need to test this one
+"photoAudioNotAuthorized"  = "Photos, Video or Audio are not authorized!\n\nFix this under: Settings>%@";
+"deviceDisconnected" = "Sensor disconnected";
+
+// For Utils
+"okText" = "OK";
+"errorText" = "Error";
+"confirmText" = "Confirm";
+
