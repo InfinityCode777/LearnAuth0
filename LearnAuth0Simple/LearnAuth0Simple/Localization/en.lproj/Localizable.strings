@@ -21,6 +21,7 @@
 "loginFailedText" = "Login failed!";
 "noNetworkWarning" = "No Network! Functionality will be limited and data will not be uploaded to cloud!";
 "loginErrorText" = "Login error: ";
+"rememberMeText" = "Remember me?";
 
 // For f8 Info page
 "otherActivity" = "Other Activity";
@@ -88,3 +89,5 @@
 "errorText" = "Error";
 "confirmText" = "Confirm";
 
+// MISC
+" " = " ";

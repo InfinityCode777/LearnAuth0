@@ -152,7 +152,7 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
                 usernameOrEmail: usernameOrEmail,
                 password: password,
                 realm: "Username-Password-Authentication",
-                audience: apiIdentifier,
+//                audience: apiIdentifier,
                 scope: "openid profile")
             .start {[weak self] result in
                 

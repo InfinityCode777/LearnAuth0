@@ -21,6 +21,7 @@
 "loginFailedText" = "登录失败!";
 "noNetworkWarning" = "无网络! 部分功能受限，数据不会被上传到云端";
 "loginErrorText" = "登录错误：";
+"rememberMeText" = "记住密码?";
 
 // f8 信息页面
 "otherActivity" = "其它活动";
@@ -87,3 +88,6 @@
 "okText" = "好";
 "errorText" = "错误";
 "confirmText" = "确认";
+
+// 杂项
+" " = " ";

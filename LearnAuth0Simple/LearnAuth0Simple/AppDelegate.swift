@@ -13,10 +13,25 @@ import Auth0
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    private let authManager = F8Auth0Manager.sharedInstance()!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // Try to use cloud upload
+        if let (clientID, domain, apiBaseURL, APIIdentifier) = getF8UploadParams(){
+            
+            /// Set up the authentication manager
+            authManager.registerAuth0(clientID: clientID, domain: domain, session: URLSession.shared, apiIdentifier: APIIdentifier)
+            
+//            /// Register the API base URL with the data manager
+//            dataManager.setAPI(baseURL: apiBaseURL)
+            
+            
+        } else {
+            F8Log.warn("Could not get info to proceed to login, add key/value pairs for keys: 'clientID', 'domain' and 'apiBaseURL'")
+        }
+
         return true
     }
 
@@ -44,6 +59,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         return Auth0.resumeAuth(url, options: options)
+    }
+    
+    /// Get credentials for cloud upload from plist
+    /// Returns (uploadUrl, uploadToken) or nil if error
+    public func getF8UploadParams() -> (String, String, String, String)? {
+        guard let apiBaseURL = F8AppUtils.getSetting("apiBaseURL") else { return nil }
+        guard let clientID = F8AppUtils.getSetting("ClientID") else { return nil }
+        guard let domain = F8AppUtils.getSetting("Domain") else { return nil }
+        guard let APIIdentifier = F8AppUtils.getSetting("APIIdentifier") else { return nil }
+        return (clientID, domain, apiBaseURL, APIIdentifier)
     }
 }
 

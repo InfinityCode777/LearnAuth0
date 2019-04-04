@@ -5,9 +5,12 @@ target 'LearnAuth0Simple' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for LearnAuth0Simple
-  pod 'Auth0'
-  pod 'Anchorage'
+  # 0Auth servcie via auth0
+  pod 'Auth0'           # MIT License
+  pod 'SimpleKeychain'  # MIT License
+  # Layout API
+  pod 'Anchorage'       # MIT License
+  # Network API
   pod 'Alamofire'
 
   target 'LearnAuth0SimpleTests' do

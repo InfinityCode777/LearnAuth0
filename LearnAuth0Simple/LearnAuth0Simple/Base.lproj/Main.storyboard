@@ -13,12 +13,12 @@
         <!--Login NativeVC-->
         <scene sceneID="Tx0-nM-W7j">
             <objects>
-                <viewController storyboardIdentifier="F8LoginNative" id="yG8-hr-qnr" customClass="F8LoginNativeVC" customModule="loggerApp_Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="F8LoginNative" id="yG8-hr-qnr" customClass="F8LoginNativeVC" customModule="LearnAuth0Simple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qxt-T6-npG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F8LogoOnline" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-Ub-uW5">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIconEnabled" translatesAutoresizingMaskIntoConstraints="NO" id="CVa-Ub-uW5">
                                 <rect key="frame" x="147.5" y="70" width="80" height="80"/>
                                 <color key="tintColor" red="0.92454427480000001" green="0.20434159039999999" blue="0.14737829569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -34,7 +34,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="srI-C0-0eI">
                                 <rect key="frame" x="37.5" y="323.5" width="300" height="30"/>
@@ -123,9 +123,9 @@
                                 </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-OX-1t1" customClass="UILocalizedButton" customModule="LearnAuth0Simple">
-                                <rect key="frame" x="240.5" y="353.5" width="107" height="20"/>
+                                <rect key="frame" x="240.5" y="357.5" width="107" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="w9L-5J-Rfk"/>
+                                    <constraint firstAttribute="height" constant="21" id="w9L-5J-Rfk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -179,10 +179,53 @@
                                     <constraint firstAttribute="height" constant="20" id="tYH-ZG-CCX"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIu-2c-YdF" customClass="UILocalizedLabel" customModule="LearnAuth0Simple" customModuleProvider="target">
+                                <rect key="frame" x="52.5" y="357.5" width="82" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CMy-Ut-Zdw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Localizable"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="locTextKey" value="rememberMeText"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableBundle" value="main"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-Ic-Lrc" customClass="UILocalizedButton" customModule="LearnAuth0Simple" customModuleProvider="target">
+                                <rect key="frame" x="31.5" y="359.5" width="17" height="17"/>
+                                <color key="backgroundColor" red="0.93761962649999997" green="0.78910404440000004" blue="0.41951596740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="17" id="7fl-2n-koB"/>
+                                    <constraint firstAttribute="height" constant="17" id="lh1-Ym-TAg"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Localizable"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="locTextKey" value=" "/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableBundle" value="main"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onRememberMeBtnTapped:" destination="yG8-hr-qnr" eventType="touchUpInside" id="hdJ-9a-hy6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tur-Wg-gaQ" firstAttribute="top" secondItem="srI-C0-0eI" secondAttribute="bottom" id="09L-gC-l11"/>
+                            <constraint firstItem="eHT-Ic-Lrc" firstAttribute="leading" secondItem="tur-Wg-gaQ" secondAttribute="leading" constant="4" id="0p1-fK-8F2"/>
                             <constraint firstItem="tmh-qr-AGF" firstAttribute="centerX" secondItem="9cU-qh-cHv" secondAttribute="centerX" id="1JA-oj-zFt"/>
                             <constraint firstItem="srI-C0-0eI" firstAttribute="centerX" secondItem="9cU-qh-cHv" secondAttribute="centerX" id="2nL-bc-iKz"/>
                             <constraint firstItem="5cV-tU-g0R" firstAttribute="centerY" secondItem="Qxt-T6-npG" secondAttribute="centerY" constant="-50" id="7zr-C7-VuD"/>
@@ -200,13 +243,16 @@
                             <constraint firstItem="U66-Fh-rkW" firstAttribute="top" secondItem="tur-Wg-gaQ" secondAttribute="bottom" constant="30" id="eWp-dW-TcN"/>
                             <constraint firstItem="5cV-tU-g0R" firstAttribute="width" secondItem="Qxt-T6-npG" secondAttribute="width" multiplier="300/375" id="fPU-VE-Zb9"/>
                             <constraint firstItem="wtL-OX-1t1" firstAttribute="trailing" secondItem="tur-Wg-gaQ" secondAttribute="trailing" id="gvX-cM-jcc"/>
-                            <constraint firstItem="wtL-OX-1t1" firstAttribute="top" secondItem="tur-Wg-gaQ" secondAttribute="top" id="j22-iw-Eqq"/>
+                            <constraint firstItem="wtL-OX-1t1" firstAttribute="top" secondItem="tur-Wg-gaQ" secondAttribute="top" constant="4" id="j22-iw-Eqq"/>
                             <constraint firstItem="tur-Wg-gaQ" firstAttribute="width" secondItem="Qxt-T6-npG" secondAttribute="width" multiplier="320/375" id="jAg-tf-Sao"/>
                             <constraint firstItem="Pr6-5T-Xj1" firstAttribute="top" secondItem="tmh-qr-AGF" secondAttribute="bottom" constant="8" id="jf1-SW-HvS"/>
                             <constraint firstItem="U66-Fh-rkW" firstAttribute="centerX" secondItem="9cU-qh-cHv" secondAttribute="centerX" id="nHT-3p-Ude"/>
                             <constraint firstItem="tmh-qr-AGF" firstAttribute="width" secondItem="Qxt-T6-npG" secondAttribute="width" multiplier="300/375" id="poN-sm-ayM"/>
+                            <constraint firstItem="yIu-2c-YdF" firstAttribute="leading" secondItem="eHT-Ic-Lrc" secondAttribute="trailing" constant="4" id="qBq-gk-G7G"/>
+                            <constraint firstItem="yIu-2c-YdF" firstAttribute="top" secondItem="tur-Wg-gaQ" secondAttribute="top" constant="4" id="qhQ-ku-3Uz"/>
                             <constraint firstItem="Pr6-5T-Xj1" firstAttribute="centerX" secondItem="9cU-qh-cHv" secondAttribute="centerX" id="stO-JS-hdo"/>
                             <constraint firstItem="LcE-oW-Yj4" firstAttribute="top" secondItem="5cV-tU-g0R" secondAttribute="bottom" id="t5y-3k-h3f"/>
+                            <constraint firstItem="eHT-Ic-Lrc" firstAttribute="centerY" secondItem="yIu-2c-YdF" secondAttribute="centerY" id="tK1-Da-nyd"/>
                             <constraint firstItem="CVa-Ub-uW5" firstAttribute="top" secondItem="Qxt-T6-npG" secondAttribute="top" constant="70" id="zC5-db-npv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9cU-qh-cHv"/>
@@ -220,6 +266,8 @@
                         <outlet property="needAnAccountLabel" destination="xzj-Yl-6Fr" id="KFS-Wu-ijG"/>
                         <outlet property="passwordSeparator" destination="tur-Wg-gaQ" id="wOl-Pk-Hha"/>
                         <outlet property="passwordTextField" destination="srI-C0-0eI" id="ySN-QD-WdU"/>
+                        <outlet property="rememberMeBtn" destination="eHT-Ic-Lrc" id="3Xy-cU-6Kd"/>
+                        <outlet property="rememberMeLabel" destination="yIu-2c-YdF" id="jBf-4b-4bd"/>
                         <outlet property="resetPasswordBtn" destination="wtL-OX-1t1" id="GPC-d3-0g5"/>
                         <outlet property="signInBtn" destination="O1f-XQ-Gou" id="68w-2m-FIt"/>
                         <outlet property="signupNewUserBtn" destination="qOq-UT-M69" id="cA2-1w-wzJ"/>
@@ -231,6 +279,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F8LogoOnline" width="80" height="80"/>
+        <image name="appIconEnabled" width="80" height="80"/>
     </resources>
 </document>

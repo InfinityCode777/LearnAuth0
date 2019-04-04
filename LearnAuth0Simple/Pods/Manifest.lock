@@ -9,6 +9,7 @@ DEPENDENCIES:
   - Alamofire
   - Anchorage
   - Auth0
+  - SimpleKeychain
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -23,6 +24,6 @@ SPEC CHECKSUMS:
   Auth0: df9ac013e7850052fea1dcd53fa09bb129121721
   SimpleKeychain: e2485c28d82fcece35e9e41faeac42ebfe614815
 
-PODFILE CHECKSUM: eb4440c9dc2a89b1b7ebf9d953e0d625691414f7
+PODFILE CHECKSUM: 3243acfdc181ea1962fe1f1b085628d6058625a1
 
 COCOAPODS: 1.5.0

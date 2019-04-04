@@ -16,8 +16,32 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>auth0</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>JLSettings</key>
+	<dict>
+		<key>APIIdentifier</key>
+		<string>wday-test-api</string>
+		<key>ClientID</key>
+		<string>sCoDjticeD_lUbHI3r_h5nq0mIOGvFYs</string>
+		<key>Domain</key>
+		<string>infinity-coding8.auth0.com</string>
+		<key>apiBaseURL</key>
+		<string>https://logger-dev.api.f8web.net/</string>
+	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -41,18 +65,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>None</string>
-            <key>CFBundleURLName</key>
-            <string>auth0</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
-            </array>
-        </dict>
-    </array>
 </dict>
 </plist>
