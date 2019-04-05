@@ -365,8 +365,8 @@ extension F8LoginNativeVC {
         resetPasswordBtn.isEnabled = true
         signupNewUserBtn.isEnabled = true
         
-        rememberMeLabel.isEnabled = true
-        rememberMeBtn.isEnabled = true
+        rememberMeLabel.isEnabled = false
+        rememberMeBtn.isEnabled = false
         
         switch state {
         // No network, no login, invalid info, page is loaded for the first time
@@ -383,10 +383,6 @@ extension F8LoginNativeVC {
             
             resetPasswordBtn.isEnabled = true
             signupNewUserBtn.isEnabled = true
-            
-            rememberMeLabel.isEnabled = false
-            rememberMeBtn.isEnabled = false
-
             
         // No network, no login, valid info
         case (false, false, true):
@@ -405,6 +401,9 @@ extension F8LoginNativeVC {
             resetPasswordBtn.isEnabled = false
             signupNewUserBtn.isEnabled = false
             
+            rememberMeLabel.isEnabled = true
+            rememberMeBtn.isEnabled = true
+            
         // Has network, has login, valid info
         case (true, true, true):
             // Lock credential input fields
@@ -421,19 +420,17 @@ extension F8LoginNativeVC {
             resetPasswordBtn.isHidden = true
             signupNewUserBtn.isHidden = true
             needAnAccountLabel.isHidden = true
-            
+
         // Has network, no login, invalid info, page is loaded for the first time
         case (true, false, false):
             signInBtn.isEnabled = false
             signInBtn.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             signInBtn.borderColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             
-            rememberMeLabel.isEnabled = false
-            rememberMeBtn.isEnabled = false
-            
         // Has network, no login, valid info
         case (true, false, true):
-            break
+            rememberMeLabel.isEnabled = true
+            rememberMeBtn.isEnabled = true
         default:
             F8Log.error("Please check the logic for UI of F8 login page")
         }
