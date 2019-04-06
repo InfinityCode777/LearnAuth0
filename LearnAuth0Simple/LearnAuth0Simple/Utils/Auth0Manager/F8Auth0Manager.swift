@@ -193,5 +193,32 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
         }
     }
     
+    public func performSignUp(_ loginCredential: F8LoginCredential) {
+//        self.view.endEditing(true)
+//        self.loading = true
+        Auth0
+            .authentication()
+            .createUser(
+                email: "self.emailTextField.text!",
+                password: "self.passwordTextField.text!",
+                connection: "Username-Password-Authentication",
+                userMetadata: ["first_name": "self.firstNameTextField.text!",
+                               "last_name": "self.lastNameTextField.text!"]
+            )
+            .start { result in
+                DispatchQueue.main.async {
+//                    self.loading = false
+                    switch result {
+                    case .success(let user):
+//                        self.showAlertForSuccess("User Sign up: \(user.email)")
+//                        self.performSegue(withIdentifier: "DismissSignUp", sender: nil)
+                        break
+                    case .failure(let error):
+//                        self.showAlertForError(error)
+                        break
+                    }
+                }
+        }
+    }
     
 }

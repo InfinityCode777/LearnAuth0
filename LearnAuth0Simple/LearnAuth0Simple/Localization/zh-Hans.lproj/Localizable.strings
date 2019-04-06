@@ -9,6 +9,7 @@
 // f8 登录页面
 "signIn" = "登录";
 "signOut" = "退出";
+"signUp"= "注册";
 "continueText" = "继续";
 "continueOffline" = "继续离线模式";
 "whenOffline" = "当离线时";

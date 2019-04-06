@@ -161,7 +161,7 @@ public class F8LoginNativeVC: UIViewController {
 /// Utilities for signIn/signOut/signUp/reset
 extension F8LoginNativeVC {
     
-    fileprivate var isInfoValid: Bool {
+    private var isInfoValid: Bool {
         guard let emailOrUsernameText = emailOrUsernameTextField.text, let passwordText = passwordTextField.text else {
             return false
         }
@@ -220,7 +220,7 @@ extension F8LoginNativeVC {
                                 self?.isUserLoggedIn = true
                                 self?.refreshPage()
                                 if F8AppUtils.shouldRememberUser {
-                                    F8AppUtils.saveLoginCredential(F8LoginCredential(emailOrusername: emailOrUsernameString, password: passwordString))
+                                    F8AppUtils.saveLoginCredential(F8LoginCredential(emailOrUsername: emailOrUsernameString, password: passwordString))
                                 }
                             }
                             
@@ -240,7 +240,7 @@ extension F8LoginNativeVC {
     }
     
     @IBAction func onSignupBtnTapped(_ sender: Any) {
-        signupNewUser()
+//        signupNewUser()
     }
     
     @IBAction func onRememberMeBtnTapped(_ sender: Any) {
@@ -296,12 +296,10 @@ extension F8LoginNativeVC: UITextFieldDelegate {
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case self.emailOrUsernameTextField:
-            //            self.passwordTextField.becomeFirstResponder()
-            emailOrUsernameTextField.resignFirstResponder()
+            self.passwordTextField.becomeFirstResponder()
+//            emailOrUsernameTextField.resignFirstResponder()
         case self.passwordTextField:
-            //        case self.passwordTextField where self.isInfoValid:
             passwordTextField.resignFirstResponder()
-        //            self.performLogin()
         default:
             break
         }

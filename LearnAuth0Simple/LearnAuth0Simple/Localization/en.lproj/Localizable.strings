@@ -9,6 +9,7 @@
 // For f8 Login page
 "signIn" = "Sign In";
 "signOut" = "Sign Out";
+"signUp"= "Sign Up";
 "continueText" = "Continue";
 "continueOffline" = "Continue Offline";
 "whenOffline" = "When Offline";

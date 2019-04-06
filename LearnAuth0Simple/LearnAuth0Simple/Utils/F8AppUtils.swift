@@ -13,8 +13,22 @@ public struct F8LoginCredential: Codable {
     public var emailOrUsername: String
     public var passowrd: String
     
-    public init(emailOrusername: String, password: String) {
-        self.emailOrUsername = emailOrusername
+    public init(emailOrUsername: String, password: String) {
+        self.emailOrUsername = emailOrUsername
+        self.passowrd = password
+    }
+}
+
+public struct F8SignUpCredential: Codable {
+    public var firstName: String
+    public var lastName: String
+    public var emailOrUsername: String
+    public var passowrd: String
+
+    public init(firstName: String, lastName: String, emailOrUsername: String, password: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.emailOrUsername = emailOrUsername
         self.passowrd = password
     }
 }
