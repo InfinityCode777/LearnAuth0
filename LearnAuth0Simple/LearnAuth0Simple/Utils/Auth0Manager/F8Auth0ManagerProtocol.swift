@@ -30,6 +30,9 @@ public protocol F8Auth0ManagerProtocol {
     /// Function to remove all credential and profile info from memory
     func logout()
     
-    /// Sign with email/username and password
+    /// Sign in with email/username and password
     func performLoginWith(usernameOrEmail: String, password: String, _ completion: @escaping (Result<Credentials>) -> ())
+    
+    /// Sign up with email/username and password
+    func performSignUp(_ signUPCredential: F8SignUpCredential, _ completion: @escaping (DatabaseUser?, Error?) -> ())
 }

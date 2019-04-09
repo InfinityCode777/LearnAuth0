@@ -12,7 +12,11 @@ public class F8SystemNotifier: UIView {
     
     //    private let titleText = "Title of notifier"
     //    private let bodyText = "Body of notifier"
-    private let captionImage = UIImage()
+    public var captionImage: UIImage? = UIImage() {
+        didSet {
+            captionImageView.image = captionImage
+        }
+    }
     private var isUIDebug = false
     
     private var resourceBundle: Bundle = Bundle(for: F8SystemNotifier.self)
@@ -50,6 +54,7 @@ public class F8SystemNotifier: UIView {
         view.clipsToBounds = true
         /// Change color in during UI DEBUG
         view.backgroundColor = isUIDebug ? UIColor.green : UIColor.white
+        view.alpha = 0.8
         return view
     }()
     

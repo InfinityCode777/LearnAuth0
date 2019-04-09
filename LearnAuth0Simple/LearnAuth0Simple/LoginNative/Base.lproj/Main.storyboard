@@ -201,6 +201,7 @@
                                     <constraint firstAttribute="width" constant="17" id="7fl-2n-koB"/>
                                     <constraint firstAttribute="height" constant="17" id="lh1-Ym-TAg"/>
                                 </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -303,9 +304,6 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="given-name"/>
-                                <connections>
-                                    <outlet property="delegate" destination="kfe-y9-qP0" id="XCv-yY-Gd2"/>
-                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-0U-Cv8" userLabel="First Name Separator">
                                 <rect key="frame" x="27.5" y="258.5" width="320" height="1"/>
@@ -443,10 +441,14 @@
                         <viewLayoutGuide key="safeArea" id="4Nx-29-8iX"/>
                     </view>
                     <connections>
+                        <outlet property="emailOrUsernameSeparator" destination="MmP-H0-8e5" id="k9N-fh-7tK"/>
                         <outlet property="emailOrUsernameTextField" destination="tXm-Vj-uRQ" id="j8N-Zf-Fgl"/>
+                        <outlet property="firstNameSeparator" destination="Gbp-0U-Cv8" id="6Lz-jd-loJ"/>
                         <outlet property="firstNameTextField" destination="RTo-5G-M0m" id="exr-3v-1Gi"/>
+                        <outlet property="lastNameSeparator" destination="iCh-Qi-GA7" id="MPw-St-j0R"/>
                         <outlet property="lastNameTextField" destination="WG5-SF-db5" id="REM-9M-sc2"/>
                         <outlet property="logoImageView" destination="KRd-5t-6Ka" id="9SR-O8-ixt"/>
+                        <outlet property="passwordSeparator" destination="f12-1T-s8A" id="Qj1-Uv-Otu"/>
                         <outlet property="passwordTextField" destination="wrh-wo-1x4" id="JeA-4p-ywb"/>
                         <outlet property="signUpBtn" destination="YVM-QG-j1t" id="N3r-u0-ql0"/>
                     </connections>

@@ -193,17 +193,20 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
         }
     }
     
-    public func performSignUp(_ loginCredential: F8LoginCredential) {
+    public func performSignUp(_ signUPCredential: F8SignUpCredential, _ completion: @escaping (DatabaseUser?, Error?) -> ()) {
 //        self.view.endEditing(true)
 //        self.loading = true
+       let emailOrUsernameString = signUPCredential.emailOrUsername.lowercased().trimmingCharacters(in: .whitespaces)
+       let passwordString = signUPCredential.passowrd.trimmingCharacters(in: .whitespaces)
+        
         Auth0
             .authentication()
             .createUser(
-                email: "self.emailTextField.text!",
-                password: "self.passwordTextField.text!",
+                email: emailOrUsernameString,
+                password: passwordString,
                 connection: "Username-Password-Authentication",
-                userMetadata: ["first_name": "self.firstNameTextField.text!",
-                               "last_name": "self.lastNameTextField.text!"]
+                userMetadata: ["first_name": signUPCredential.firstName,
+                               "last_name": signUPCredential.lastName]
             )
             .start { result in
                 DispatchQueue.main.async {
@@ -212,9 +215,11 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
                     case .success(let user):
 //                        self.showAlertForSuccess("User Sign up: \(user.email)")
 //                        self.performSegue(withIdentifier: "DismissSignUp", sender: nil)
+                        completion(user, nil)
                         break
                     case .failure(let error):
 //                        self.showAlertForError(error)
+                        completion(nil, error)
                         break
                     }
                 }

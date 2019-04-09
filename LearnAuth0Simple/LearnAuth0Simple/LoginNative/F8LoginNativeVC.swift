@@ -86,8 +86,6 @@ public class F8LoginNativeVC: UIViewController {
         return label
     }()
     
-//    private var loginCredential: F8LoginCredential? { return F8AppUtils.retrieveLoginCrendential() }
-    
     public override func viewDidLoad() {
         // Set up the style for navigation controller
         self.navigationController?.configure()
@@ -149,11 +147,13 @@ public class F8LoginNativeVC: UIViewController {
         refreshPage()
         // Start page refreshing timer
         refreshTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshPage), userInfo: nil, repeats: true)
+        registerKeyboardNotifications()
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
         refreshTimer?.invalidate()
         refreshTimer = nil
+        removeKeyboardNotifications()
     }
     
 }
@@ -162,11 +162,11 @@ public class F8LoginNativeVC: UIViewController {
 extension F8LoginNativeVC {
     
     private var isInfoValid: Bool {
-        guard let emailOrUsernameText = emailOrUsernameTextField.text, let passwordText = passwordTextField.text else {
+        guard let emailOrUsernameString = emailOrUsernameTextField.text, let passwordString = passwordTextField.text else {
             return false
         }
         
-        let isSpacesOnly = emailOrUsernameText.trimmingCharacters(in: .whitespaces).isEmpty || passwordText.trimmingCharacters(in: .whitespaces).isEmpty
+        let isSpacesOnly = emailOrUsernameString.trimmingCharacters(in: .whitespaces).isEmpty || passwordString.trimmingCharacters(in: .whitespaces).isEmpty
         return !isSpacesOnly
     }
     
@@ -303,13 +303,18 @@ extension F8LoginNativeVC: UITextFieldDelegate {
         default:
             break
         }
-        // TODO: 04/04/19, by Jing, be cautious, this does not cause any UI glitch e.g. blinking
-        refreshPage()
+//        // TODO: 04/04/19, by Jing, be cautious, this does not cause any UI glitch e.g. blinking
+//        refreshPage()
         return true
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         F8Log.info("Function to be completed per request!")
+//        refreshTimer?.invalidate()
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        
     }
 }
 
@@ -318,6 +323,7 @@ extension F8LoginNativeVC: UITextFieldDelegate {
 extension F8LoginNativeVC {
     /// Change the UI based on user login status and network availablility
     @objc private func refreshPage() {
+        F8Log.info("Page refreshed!")
         switchUIState(to: (isNetworkAvailable == true, isUserLoggedIn, isInfoValid))
     }
     
@@ -329,12 +335,14 @@ extension F8LoginNativeVC {
     
     private func switchUIState(to state: F8LoginUIState) {
         
-        emailOrUsernameTextField.isEnabled = true
-        passwordTextField.isEnabled = true
-        emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
-        passwordTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
-        passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
-        emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
+        
+        // Disable form (email & password)
+        emailOrUsernameTextField.isEnabled = false
+        passwordTextField.isEnabled = false
+        emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+        passwordTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+        passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+        emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
         
         signInBtn.isEnabled = true
         signInBtn.setTitle(F8LocaleStrings.signIn.localized, for: .normal)
@@ -374,10 +382,11 @@ extension F8LoginNativeVC {
             signInBtn.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             signInBtn.borderColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             logoImageView.image = UIImage(named: "appIconDisabled", in: Bundle.main, compatibleWith: nil)
-            emailOrUsernameTextField.isEnabled = false
-            passwordTextField.isEnabled = false
-            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            
+            //            emailOrUsernameTextField.isEnabled = false
+            //            passwordTextField.isEnabled = false
+            //            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            //            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
             
             resetPasswordBtn.isEnabled = true
             signupNewUserBtn.isEnabled = true
@@ -391,10 +400,11 @@ extension F8LoginNativeVC {
             signInBtn.borderColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             
             logoImageView.image = UIImage(named: "appIconDisabled", in: Bundle.main, compatibleWith: nil)
-            emailOrUsernameTextField.isEnabled = false
-            passwordTextField.isEnabled = false
-            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            
+            //            emailOrUsernameTextField.isEnabled = false
+            //            passwordTextField.isEnabled = false
+            //            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            //            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
             
             resetPasswordBtn.isEnabled = false
             signupNewUserBtn.isEnabled = false
@@ -404,13 +414,13 @@ extension F8LoginNativeVC {
             
         // Has network, has login, valid info
         case (true, true, true):
-            // Lock credential input fields
-            emailOrUsernameTextField.isEnabled = false
-            passwordTextField.isEnabled = false
-            emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            passwordTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            //            // Disable form (email & password)
+            //            emailOrUsernameTextField.isEnabled = false
+            //            passwordTextField.isEnabled = false
+            //            emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            //            passwordTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            //            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
+            //            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
             
             offlineIndicator.isHidden = true
             signInBtn.setTitle(F8LocaleStrings.signOut.localized, for: .normal)
@@ -418,15 +428,35 @@ extension F8LoginNativeVC {
             resetPasswordBtn.isHidden = true
             signupNewUserBtn.isHidden = true
             needAnAccountLabel.isHidden = true
-
+            
         // Has network, no login, invalid info, page is loaded for the first time
         case (true, false, false):
             signInBtn.isEnabled = false
             signInBtn.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             signInBtn.borderColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             
+            // Enable form (email & password)
+            emailOrUsernameTextField.isEnabled = true
+            passwordTextField.isEnabled = true
+            emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
+            passwordTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
+            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
+            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
+            
+            
+            
         // Has network, no login, valid info
         case (true, false, true):
+            // Enable form (email & password)
+            emailOrUsernameTextField.isEnabled = true
+            passwordTextField.isEnabled = true
+            emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
+            passwordTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
+            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
+            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
+            
+            
+            
             rememberMeLabel.isEnabled = true
             rememberMeBtn.isEnabled = true
         default:
@@ -434,4 +464,12 @@ extension F8LoginNativeVC {
         }
         
     }
+    
+    override func keyboardWillAppear(note: Notification) {
+        refreshTimer?.invalidate()
+    }
+    
+    override func keyboardWillBeDisappear(note: Notification) {
+        refreshPage()
+        refreshTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshPage), userInfo: nil, repeats: true)    }
 }
