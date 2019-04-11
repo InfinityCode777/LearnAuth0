@@ -36,6 +36,8 @@
 		2D4B45222254FB070045772C /* F8AppUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4B45212254FB070045772C /* F8AppUtils.swift */; };
 		2D72B89E225CFD51003287D7 /* extKeyboardPresentNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72B89D225CFD51003287D7 /* extKeyboardPresentNotification.swift */; };
 		2D72B8A0225D0084003287D7 /* KeyboardPresentNotificationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D72B89F225D0084003287D7 /* KeyboardPresentNotificationProtocol.swift */; };
+		2DC94990225E7CB700AB3440 /* F8ResetPWNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC9498F225E7CB700AB3440 /* F8ResetPWNativeVC.swift */; };
+		2DC94992225E869E00AB3440 /* F8ResetPWNativeVCConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC94991225E869E00AB3440 /* F8ResetPWNativeVCConfig.swift */; };
 		2DD976EB2257BAF3004B7908 /* F8SignUpNativeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD976EA2257BAF3004B7908 /* F8SignUpNativeVC.swift */; };
 		83F6A69DFBB939A7AEA56353 /* Pods_LearnAuth0SimpleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF1AD908352685CF1BA2E62 /* Pods_LearnAuth0SimpleTests.framework */; };
 		B0E55F2611EB6287447F6D3F /* Pods_LearnAuth0Simple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BD8E7747AD5A74ADA7C666 /* Pods_LearnAuth0Simple.framework */; };
@@ -88,6 +90,8 @@
 		2D4B45212254FB070045772C /* F8AppUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8AppUtils.swift; sourceTree = "<group>"; };
 		2D72B89D225CFD51003287D7 /* extKeyboardPresentNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extKeyboardPresentNotification.swift; sourceTree = "<group>"; };
 		2D72B89F225D0084003287D7 /* KeyboardPresentNotificationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPresentNotificationProtocol.swift; sourceTree = "<group>"; };
+		2DC9498F225E7CB700AB3440 /* F8ResetPWNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8ResetPWNativeVC.swift; sourceTree = "<group>"; };
+		2DC94991225E869E00AB3440 /* F8ResetPWNativeVCConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8ResetPWNativeVCConfig.swift; sourceTree = "<group>"; };
 		2DD976EA2257BAF3004B7908 /* F8SignUpNativeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F8SignUpNativeVC.swift; sourceTree = "<group>"; };
 		5C94577679691232A58BDB19 /* Pods-LearnAuth0SimpleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnAuth0SimpleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnAuth0SimpleTests/Pods-LearnAuth0SimpleTests.release.xcconfig"; sourceTree = "<group>"; };
 		97BD8E7747AD5A74ADA7C666 /* Pods_LearnAuth0Simple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnAuth0Simple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +214,8 @@
 				2DD976EA2257BAF3004B7908 /* F8SignUpNativeVC.swift */,
 				2D2BCC02225BA464002468EE /* F8LoginNativeVCConfig.swift */,
 				2D2BCC04225BA4D7002468EE /* F8SignUpNavtiveVCConfig.swift */,
+				2DC9498F225E7CB700AB3440 /* F8ResetPWNativeVC.swift */,
+				2DC94991225E869E00AB3440 /* F8ResetPWNativeVCConfig.swift */,
 			);
 			path = LoginNative;
 			sourceTree = "<group>";
@@ -435,8 +441,10 @@
 				2D4B451722540F9A0045772C /* extUINavigationController.swift in Sources */,
 				2D4B10E620B3684D0094963F /* AppDelegate.swift in Sources */,
 				2D72B89E225CFD51003287D7 /* extKeyboardPresentNotification.swift in Sources */,
+				2DC94990225E7CB700AB3440 /* F8ResetPWNativeVC.swift in Sources */,
 				2D4B44FD22540C990045772C /* ExtLocalizable.swift in Sources */,
 				2D72B8A0225D0084003287D7 /* KeyboardPresentNotificationProtocol.swift in Sources */,
+				2DC94992225E869E00AB3440 /* F8ResetPWNativeVCConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

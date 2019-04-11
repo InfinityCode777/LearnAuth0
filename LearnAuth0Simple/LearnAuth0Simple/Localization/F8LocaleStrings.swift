@@ -21,6 +21,15 @@ public enum F8LocaleStrings: String, F8Localizable, CaseIterable {
     case noNetworkWarning
     case loginErrorText
     
+    // For f8 Sign up page
+    case signedUpSuccessfullyTitle
+    case signedUpSuccessfullyBody
+    case signedUpFailedTitle
+    case signedUpFailedBody
+    
+    // For f8 Reset password page
+    case resetPWText
+    
     // f8 Info page
     case otherActivity
     case otherTrainee

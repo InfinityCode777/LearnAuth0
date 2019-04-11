@@ -24,6 +24,15 @@
 "loginErrorText" = "Login error: ";
 "rememberMeText" = "Remember me?";
 
+// For f8 sign up page
+"signedUpSuccessfullyTitle" = "Signed up successfully!";
+"signedUpSuccessfullyBody" = "Please verify your email and login in!\n";
+"signedUpFailedTitle" = "Signed up failed!";
+"signedUpFailedBody" = "Please check email and password or contact admin.\nError: ";
+
+// For f8 reset password page
+"resetPWText" = "Reset Password";
+
 // For f8 Info page
 "otherActivity" = "Other Activity";
 "otherTrainee"= "Other Trainee";

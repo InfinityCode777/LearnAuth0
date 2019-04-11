@@ -127,16 +127,16 @@ public class F8LoginNativeVC: UIViewController {
         
         // Retrieve login credential if user has checked 'Remember me' box
         if F8AppUtils.shouldRememberUser {
-        F8AppUtils.retrieveLoginCrendential() {[weak self] (error, loginCredential) in
-            if error == nil {
-                guard let emailOrUsernameString = loginCredential?.emailOrUsername, let passwordString = loginCredential?.passowrd else {
-                    F8Log.warn("Incomplete email/username and password!")
-                    return
+            F8AppUtils.retrieveLoginCrendential() {[weak self] (error, loginCredential) in
+                if error == nil {
+                    guard let emailOrUsernameString = loginCredential?.emailOrUsername, let passwordString = loginCredential?.passowrd else {
+                        F8Log.warn("Incomplete email/username and password!")
+                        return
+                    }
+                    self?.emailOrUsernameTextField.text = emailOrUsernameString
+                    self?.passwordTextField.text = passwordString
                 }
-                self?.emailOrUsernameTextField.text = emailOrUsernameString
-                self?.passwordTextField.text = passwordString
             }
-        }
         }
     }
     
@@ -177,7 +177,7 @@ extension F8LoginNativeVC {
             // Sign Out
             f8Auth0Manager.logout()
             isUserLoggedIn = false
-
+            
             // Clean the login credential if user has not checked 'Remember me' box
             if !F8AppUtils.shouldRememberUser {
                 emailOrUsernameTextField.text = nil
@@ -240,7 +240,7 @@ extension F8LoginNativeVC {
     }
     
     @IBAction func onSignupBtnTapped(_ sender: Any) {
-//        signupNewUser()
+        //        signupNewUser()
     }
     
     @IBAction func onRememberMeBtnTapped(_ sender: Any) {
@@ -283,9 +283,9 @@ extension F8LoginNativeVC {
     
     /// Navigates to the next page
     private func navToNextPage(){
-//        if self.navigationController?.topViewController != F8LoggerConfig.shared.f8LoginNative.postViewController {
-//            self.navigationController?.pushViewController(F8LoggerConfig.shared.f8LoginNative.postViewController!, animated: true)
-//        }
+        //        if self.navigationController?.topViewController != F8LoggerConfig.shared.f8LoginNative.postViewController {
+        //            self.navigationController?.pushViewController(F8LoggerConfig.shared.f8LoginNative.postViewController!, animated: true)
+        //        }
     }
     
 }
@@ -297,20 +297,20 @@ extension F8LoginNativeVC: UITextFieldDelegate {
         switch textField {
         case self.emailOrUsernameTextField:
             self.passwordTextField.becomeFirstResponder()
-//            emailOrUsernameTextField.resignFirstResponder()
+        //            emailOrUsernameTextField.resignFirstResponder()
         case self.passwordTextField:
             passwordTextField.resignFirstResponder()
         default:
             break
         }
-//        // TODO: 04/04/19, by Jing, be cautious, this does not cause any UI glitch e.g. blinking
-//        refreshPage()
+        //        // TODO: 04/04/19, by Jing, be cautious, this does not cause any UI glitch e.g. blinking
+        //        refreshPage()
         return true
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
         F8Log.info("Function to be completed per request!")
-//        refreshTimer?.invalidate()
+        //        refreshTimer?.invalidate()
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
@@ -355,15 +355,15 @@ extension F8LoginNativeVC {
         logoImageView.image = UIImage(named: "appIconEnabled", in: Bundle.main, compatibleWith: nil)
         offlineIndicator.isHidden = false
         
-                        // TODO: In dev, disable them for now
-                        resetPasswordBtn.isHidden = false
-                        signupNewUserBtn.isHidden = false
-                        needAnAccountLabel.isHidden = false
+        // TODO: In dev, disable them for now
+        resetPasswordBtn.isHidden = false
+        signupNewUserBtn.isHidden = false
+        needAnAccountLabel.isHidden = false
         
-//        // TODO: In dev, for dev only
-//        resetPasswordBtn.isHidden = true
-//        signupNewUserBtn.isHidden = true
-//        needAnAccountLabel.isHidden = true
+        //        // TODO: In dev, for dev only
+        //        resetPasswordBtn.isHidden = true
+        //        signupNewUserBtn.isHidden = true
+        //        needAnAccountLabel.isHidden = true
         
         
         continueBtn.isHidden = false
@@ -383,13 +383,8 @@ extension F8LoginNativeVC {
             signInBtn.borderColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             logoImageView.image = UIImage(named: "appIconDisabled", in: Bundle.main, compatibleWith: nil)
             
-            //            emailOrUsernameTextField.isEnabled = false
-            //            passwordTextField.isEnabled = false
-            //            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            //            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            
-            resetPasswordBtn.isEnabled = true
-            signupNewUserBtn.isEnabled = true
+            resetPasswordBtn.isEnabled = false
+            signupNewUserBtn.isEnabled = false
             
         // No network, no login, valid info
         case (false, false, true):
@@ -401,26 +396,14 @@ extension F8LoginNativeVC {
             
             logoImageView.image = UIImage(named: "appIconDisabled", in: Bundle.main, compatibleWith: nil)
             
-            //            emailOrUsernameTextField.isEnabled = false
-            //            passwordTextField.isEnabled = false
-            //            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            //            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            
             resetPasswordBtn.isEnabled = false
             signupNewUserBtn.isEnabled = false
             
-            rememberMeLabel.isEnabled = true
-            rememberMeBtn.isEnabled = true
+//            rememberMeLabel.isEnabled = true
+//            rememberMeBtn.isEnabled = true
             
         // Has network, has login, valid info
         case (true, true, true):
-            //            // Disable form (email & password)
-            //            emailOrUsernameTextField.isEnabled = false
-            //            passwordTextField.isEnabled = false
-            //            emailOrUsernameTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            //            passwordTextField.textColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            //            passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
-            //            emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_DISABLED
             
             offlineIndicator.isHidden = true
             signInBtn.setTitle(F8LocaleStrings.signOut.localized, for: .normal)
@@ -444,7 +427,6 @@ extension F8LoginNativeVC {
             emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
             
             
-            
         // Has network, no login, valid info
         case (true, false, true):
             // Enable form (email & password)
@@ -454,8 +436,6 @@ extension F8LoginNativeVC {
             passwordTextField.textColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
             passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
             emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_SUBTITLE_TEXT_ENABLED
-            
-            
             
             rememberMeLabel.isEnabled = true
             rememberMeBtn.isEnabled = true

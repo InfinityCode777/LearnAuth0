@@ -226,4 +226,38 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
         }
     }
     
+    
+//    func resetPassword(email: String, connection: String) -> Request<Void, AuthenticationError> {
+//        let payload = [
+//            "email": email,
+//            "connection": connection,
+//            "client_id": self.clientId
+//        ]
+//        let resetPassword = URL(string: "/dbconnections/change_password", relativeTo: self.url)!
+//        return Request(session: session, url: resetPassword, method: "POST", handle: noBody, payload: payload, logger: self.logger, telemetry: self.telemetry)
+//    }
+    
+    
+    public func resetPassword(email: String, _ completion: @escaping (Request<Void, AuthenticationError>) -> () ) {
+        
+        guard let clientId = clientId, let domain = domain else {
+            F8Log.error("ClientID, domain or apiIdentifier not properly supplied!")
+            return
+        }
+        
+        let emailString = email.lowercased().trimmingCharacters(in: .whitespaces)
+        let request = Auth0.authentication().resetPassword(email: emailString, connection: "Username-Password-Authentication")
+        completion(request)
+    }
+    
+//    func resetPassword(email: String, connection: String, clientID: String, domain: String) -> Request<Void, AuthenticationError> {
+//            let payload = [
+//                "email": email,
+//                "connection": connection,
+//                "client_id": sclientID
+//            ]
+//            let resetPassword = URL(string: "/dbconnections/change_password", relativeTo: domain)!
+//            return Request(session: session, url: resetPassword, method: "POST", handle: noBody, payload: payload, logger: self.logger, telemetry: self.telemetry)
+//        }
+    
 }

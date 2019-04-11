@@ -126,22 +126,22 @@ extension F8SignUpNativeVC {
         f8Auth0Manager.performSignUp(signUpCredential){[weak self] user, error in
             if error == nil {
                 self?.signUpResultNotifier.blurButtonTappedHandler = self?.dismissNotifier
-                self?.signUpResultNotifier.titleText = "Successful signed up!"
-                self?.signUpResultNotifier.bodyText = "Please return login page to sign in with \(String(describing: user?.email))"
+                self?.signUpResultNotifier.titleText = F8LocaleStrings.signedUpSuccessfullyTitle.localized
+                self?.signUpResultNotifier.bodyText =  F8LocaleStrings.signedUpSuccessfullyBody.localized + "\n\((user?.email ?? ""))"
                 self?.signUpResultNotifier.captionImage = UIImage(named: "checkMarkSmall") 
                 self?.signUpResultNotifier.isHidden = false
                 self?.isSignUpSuccessful = true
             } else {
                 self?.signUpResultNotifier.blurButtonTappedHandler = nil
-                self?.signUpResultNotifier.titleText = "Failed to sign up!"
-                self?.signUpResultNotifier.bodyText = "Please contact admin! Error: \(String(describing: error))"
+                self?.signUpResultNotifier.titleText = F8LocaleStrings.signedUpFailedTitle.localized
+                self?.signUpResultNotifier.bodyText = F8LocaleStrings.signedUpFailedBody.localized + "\n\((error?.localizedDescription ?? ""))"
                 self?.signUpResultNotifier.captionImage = UIImage(named: "NoNetworkFilledFG")
                 self?.signUpResultNotifier.isHidden = false
                 self?.isSignUpSuccessful = false
                 self?.delay(seconds: 2){
                     self?.signUpResultNotifier.isHidden = true
                 }
-
+                
             }
         }
     }
@@ -188,10 +188,10 @@ extension F8SignUpNativeVC {
 
 
 extension F8SignUpNativeVC: UITextFieldDelegate {
-
+    
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-
+        
         F8Log.info("Delegate being called")
         switch textField {
         case firstNameTextField:
@@ -218,7 +218,7 @@ extension F8SignUpNativeVC: UITextFieldDelegate {
     public func textFieldDidEndEditing(_ textField: UITextField) {
         F8Log.info("End editing!")
     }
-
+    
 }
 
 // Update page UI
@@ -279,7 +279,7 @@ extension F8SignUpNativeVC {
             lastNameSeparator.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
-
+            
             // Network is not available
             logoImageView.image = UIImage(named: "appIconDisabled")
             noNetworkLabel.isHidden = false
@@ -312,7 +312,7 @@ extension F8SignUpNativeVC {
             signUpBtn.isEnabled = true
             signUpBtn.backgroundColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
             signUpBtn.borderColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT
-
+            
             
         case (true, true, true):
             // Disable all fields of the form
@@ -331,7 +331,7 @@ extension F8SignUpNativeVC {
             lastNameSeparator.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             emailOrUsernameSeparator.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
             passwordSeparator.backgroundColor = F8ColorScheme.DEFAULT_TITLE_TEXT_DISABLED
-
+            
         case (true, false, false):
             break
         default:

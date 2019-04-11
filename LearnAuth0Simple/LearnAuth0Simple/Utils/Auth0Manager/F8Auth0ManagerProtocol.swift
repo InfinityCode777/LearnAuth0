@@ -35,4 +35,6 @@ public protocol F8Auth0ManagerProtocol {
     
     /// Sign up with email/username and password
     func performSignUp(_ signUPCredential: F8SignUpCredential, _ completion: @escaping (DatabaseUser?, Error?) -> ())
+    /// Reset password
+    func resetPassword(email: String, _ completion: @escaping (Request<Void, AuthenticationError>) -> () )
 }
