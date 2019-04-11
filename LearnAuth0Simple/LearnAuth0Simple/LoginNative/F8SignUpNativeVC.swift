@@ -79,22 +79,27 @@ public class F8SignUpNativeVC: UIViewController {
         noNetworkLabel.heightAnchor >= 20
         noNetworkLabel.bottomAnchor >= firstNameTextField.topAnchor - 20
         noNetworkLabel.isHidden = true
-        
     }
     
     public override func viewWillAppear(_ animated: Bool) {
         isSignUpSuccessful = false
-        clearForm()
         // Refresh the page and change UI basedon network
         refreshPage()
         // Start page refreshing timer
         refreshTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshPage), userInfo: nil, repeats: true)
+        
+        firstNameTextField.text = "Foxx"
+        lastNameTextField.text = "Conn"
+        //        emailOrUsernameTextField.text = "jwang@ele.uri.edu"
+        emailOrUsernameTextField.text = "jing.wang1986china@gmail.com"
+        passwordTextField.text = "!1QazxsW2@"
         
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
         refreshTimer?.invalidate()
         refreshTimer = nil
+        clearForm()
     }
     
 }
@@ -128,7 +133,8 @@ extension F8SignUpNativeVC {
                 self?.signUpResultNotifier.blurButtonTappedHandler = self?.dismissNotifier
                 self?.signUpResultNotifier.titleText = F8LocaleStrings.signedUpSuccessfullyTitle.localized
                 self?.signUpResultNotifier.bodyText =  F8LocaleStrings.signedUpSuccessfullyBody.localized + "\n\((user?.email ?? ""))"
-                self?.signUpResultNotifier.captionImage = UIImage(named: "checkMarkSmall") 
+                self?.signUpResultNotifier.captionImage = UIImage(named: "checkMarkSmall")
+                self?.signUpResultNotifier.captionImageTintColor = F8ColorScheme.COLORTAG_COLOR_OPTION2
                 self?.signUpResultNotifier.isHidden = false
                 self?.isSignUpSuccessful = true
             } else {
@@ -164,14 +170,12 @@ extension F8SignUpNativeVC {
     }
     
     @IBAction func onDismissBtnTapped(_ sender: Any) {
-        clearForm()
         refreshPage()
         dismiss(animated: true, completion: nil)
     }
     
     
     @objc func dismissNotifier(_ sender: Any) {
-        clearForm()
         refreshPage()
         signUpResultNotifier.isHidden = true
         if isSignUpSuccessful { dismiss(animated: true, completion: nil) }

@@ -409,7 +409,7 @@
                                     <action selector="onDismissBtnTapped:" destination="kfe-y9-qP0" eventType="touchUpInside" id="F3J-Kt-c8c"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udq-Ly-BaZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udq-Ly-BaZ" customClass="UILocalizedLabel" customModule="LearnAuth0Simple" customModuleProvider="target">
                                 <rect key="frame" x="158" y="34" width="59.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ffK-et-V3F"/>
@@ -417,6 +417,11 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Localizable"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="locTextKey" value="signUp"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableBundle" value="main"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -552,7 +557,7 @@
                                     <action selector="onResetPWBtnTapped:" destination="wTO-4A-k11" eventType="touchUpInside" id="Fyw-pk-gyT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH8-ET-Ops">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH8-ET-Ops" customClass="UILocalizedLabel" customModule="LearnAuth0Simple" customModuleProvider="target">
                                 <rect key="frame" x="127" y="34" width="121" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="2d8-iv-oqb"/>
@@ -560,6 +565,11 @@
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="locTextKey" value="resetPWText"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableBundle" value="main"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="tableName" value="Localizable"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -615,7 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSw-RX-YLu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-1276"/>
+            <point key="canvasLocation" x="969" y="-1110"/>
         </scene>
     </scenes>
     <resources>

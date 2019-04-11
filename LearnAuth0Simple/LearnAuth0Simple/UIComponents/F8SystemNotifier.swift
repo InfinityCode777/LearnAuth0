@@ -17,6 +17,13 @@ public class F8SystemNotifier: UIView {
             captionImageView.image = captionImage
         }
     }
+    
+    public var captionImageTintColor: UIColor = F8ColorScheme.DEFAULT_BACKGROUND_NIGHT {
+        didSet {
+            captionImageView.tintColor = captionImageTintColor
+        }
+    }
+    
     private var isUIDebug = false
     
     private var resourceBundle: Bundle = Bundle(for: F8SystemNotifier.self)

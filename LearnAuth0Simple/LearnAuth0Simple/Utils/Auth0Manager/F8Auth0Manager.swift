@@ -238,7 +238,7 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
 //    }
     
     
-    public func resetPassword(email: String, _ completion: @escaping (Request<Void, AuthenticationError>) -> () ) {
+    public func resetPassword(email: String, _ completion: @escaping (Error?) -> () ) {
         
         guard let clientId = clientId, let domain = domain else {
             F8Log.error("ClientID, domain or apiIdentifier not properly supplied!")
@@ -246,8 +246,18 @@ public class F8Auth0Manager: F8Auth0ManagerProtocol {
         }
         
         let emailString = email.lowercased().trimmingCharacters(in: .whitespaces)
-        let request = Auth0.authentication().resetPassword(email: emailString, connection: "Username-Password-Authentication")
-        completion(request)
+        Auth0
+            .authentication(clientId: clientId, domain: domain, session: self.session)
+            .resetPassword(email: emailString, connection: "Username-Password-Authentication").start{ result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success :
+                    completion(nil)
+                case .failure(let error):
+                    completion(error)
+                }
+            }
+        }
     }
     
 //    func resetPassword(email: String, connection: String, clientID: String, domain: String) -> Request<Void, AuthenticationError> {

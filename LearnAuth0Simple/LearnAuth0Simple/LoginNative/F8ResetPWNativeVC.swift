@@ -39,7 +39,6 @@ public class F8ResetPWNativeVC: UIViewController {
     /// No network notifier
     private lazy var noNetworkLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 120, height: 22))
-        //        let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.numberOfLines = 0
         label.tintColor = F8ColorScheme.COLORTAG_COLOR_OPTION4
@@ -49,9 +48,11 @@ public class F8ResetPWNativeVC: UIViewController {
         return label
     }()
     
+    
     public override func viewDidLoad() {
-        emailTexfield.delegate = self
         
+        // Set textfield delegate
+        emailTexfield.delegate = self
         
         // Add login failed notifier and hide it
         view.addSubview(resetPWResultNotifier)
@@ -73,7 +74,6 @@ public class F8ResetPWNativeVC: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         isResetSuccessful = false
-                clearForm()
         // Refresh the page and change UI basedon network
         refreshPage()
         // Start page refreshing timer
@@ -85,6 +85,7 @@ public class F8ResetPWNativeVC: UIViewController {
         refreshTimer?.invalidate()
         refreshTimer = nil
         removeKeyboardNotifications()
+        clearForm()
     }
 }
 
@@ -98,6 +99,11 @@ extension F8ResetPWNativeVC {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func dismissNotifier(_ sender: Any) {
+        refreshPage()
+        resetPWResultNotifier.isHidden = true
+    }
+    
 }
 
 // Utils: Reset password 
@@ -106,9 +112,19 @@ extension F8ResetPWNativeVC {
     @IBAction func onResetPWBtnTapped(_ sender:Any) {
         
         guard let emailString = emailTexfield.text else { return }
-//        perfromResetPassword(emailString)
-        f8Auth0Manager.resetPassword(email: emailString) { _ in
-            F8Log.info("Function to be filled!")
+        f8Auth0Manager.resetPassword(email: emailString) {[weak self] error in
+            self?.resetPWResultNotifier.titleText = "Reset Password"
+            if error == nil {
+                self?.resetPWResultNotifier.bodyText = "Email for reseting has been sent to your email!\n\(emailString)"
+                self?.resetPWResultNotifier.captionImage = UIImage(named: "checkMarkSmall")
+                self?.resetPWResultNotifier.captionImageTintColor = F8ColorScheme.COLORTAG_COLOR_OPTION2
+            } else {
+                self?.resetPWResultNotifier.bodyText = "Please check your email!\n\(emailString)"
+                self?.resetPWResultNotifier.captionImage = UIImage(named: "NoNetworkFilledFG")
+            }
+            self?.resetPWResultNotifier.isHidden = false
+            self?.resetPWResultNotifier.blurButtonTappedHandler = self?.dismissNotifier
+            
         }
     }
     
@@ -120,10 +136,6 @@ extension F8ResetPWNativeVC {
         return !isSpacesOnly
     }
     
-    
-//    func perfromResetPassword(_ email: String) {
-//
-//    }
 }
 
 
@@ -139,6 +151,7 @@ extension F8ResetPWNativeVC: UITextFieldDelegate {
 
 // Utils: Page refresh
 extension F8ResetPWNativeVC {
+    
     @objc func refreshPage() {
         switchUIState(to: (isNetworkAvailable == true, isInfoValid))
     }
@@ -176,15 +189,15 @@ extension F8ResetPWNativeVC {
         }
     }
     
+    // Stop page refreshing when key board is presented
     override func keyboardWillAppear(note: Notification) {
         refreshTimer?.invalidate()
     }
     
+    // Resume page refreshing when key board is dismissed
     override func keyboardWillBeDisappear(note: Notification) {
         refreshPage()
         refreshTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(refreshPage), userInfo: nil, repeats: true)    }
-
-    
 }
 
 

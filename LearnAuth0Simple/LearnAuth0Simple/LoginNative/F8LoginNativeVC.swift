@@ -138,6 +138,11 @@ public class F8LoginNativeVC: UIViewController {
                 }
             }
         }
+        
+//        emailOrUsernameTextField.text = "jwang@ele.uri.edu"
+        emailOrUsernameTextField.text = "jing.wang1986china@gmail.com"
+        passwordTextField.text = "!1QazxsW2@"
+        
     }
     
     public override func viewWillAppear(_ animated: Bool) {
